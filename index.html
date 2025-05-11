@@ -1,81 +1,193 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Exposição de Carros</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #000000;
-            margin: 20px;
-        }
-        .carro {
-            background-color: #ffffff;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            box-shadow: 0 0 5px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-        }
-        .carro img {
-            width: 150px;
-            height: auto;
-            margin-right: 20px;
-            border-radius: 8px;
-        }
-        .carro h2 {
-            margin-top: 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exposição de Carros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+
+    header {
+      background-color: #000;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #ffd700;
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5em;
+      color: #ffd700;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    .banner {
+      background: url('https://cdn.pixabay.com/photo/2016/11/22/20/10/car-1853304_1280.jpg') no-repeat center center/cover;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .banner h2 {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      color: #ffd700;
+      font-size: 2em;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      padding: 0 20px;
+    }
+
+    .carro {
+      background-color: #1c1c1c;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(255, 215, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .carro:hover {
+      transform: scale(1.02);
+    }
+
+    .carro img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 2px solid #ffd700;
+    }
+
+    .carro-info {
+      padding: 20px;
+    }
+
+    .carro-info h3 {
+      color: #ffd700;
+      margin-bottom: 10px;
+    }
+
+    .carro-info p {
+      color: #ccc;
+      font-size: 0.95em;
+    }
+
+    footer {
+      background-color: #000;
+      color: #888;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5em;
+      }
+      .banner h2 {
+        font-size: 1.2em;
+        padding: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Exposição de Carros</h1>
 
+  <header>
+    <h1>CarExpo</h1>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Carros</a>
+      <a href="#">Contato</a>
+    </nav>
+  </header>
+
+  <section class="banner">
+    <h2>Bem-vindo à maior exposição de carros esportivos do Brasil!</h2>
+  </section>
+
+  <main class="container">
     <div class="carro">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ9ZCg7BxqzSinUps0dVioZjAhWeBD5XLj3Q&s/" alt="Ford Mustang GT 2022">
-        <div>
-            <h2>Nome: Ford Mustang</h2>
-            <p>Modelo: GT 2022</p>
-            <p>Cor: Vermelho</p>
-        </div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ9ZCg7BxqzSinUps0dVioZjAhWeBD5XLj3Q&s" alt="Ford Mustang GT 2022">
+      <div class="carro-info">
+        <h3>Ford Mustang</h3>
+        <p>Modelo: GT 2022</p>
+        <p>Cor: Vermelho</p>
+      </div>
     </div>
 
     <div class="carro">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM5UUmvliEQSyIrlPqfeBQziwr9YwvO7Cp_w&s/" alt="LaFerrari 2015">
-        <div>
-            <h2>Nome: LaFerrari</h2>
-            <p>Modelo: 2015</p>
-            <p>Cor: Amarelo</p>
-        </div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM5UUmvliEQSyIrlPqfeBQziwr9YwvO7Cp_w&s" alt="LaFerrari 2015">
+      <div class="carro-info">
+        <h3>LaFerrari</h3>
+        <p>Modelo: 2015</p>
+        <p>Cor: Amarelo</p>
+      </div>
     </div>
 
     <div class="carro">
-        <img src="https://cdn.motor1.com/images/mgl/R09nm/s1/bmw-m3-2021-im-test.webp/" alt="BMW M3 Competition 2021">
-        <div>
-            <h2>Nome: BMW M3</h2>
-            <p>Modelo: Competition 2021</p>
-            <p>Cor: Azul</p>
-        </div>
+      <img src="https://cdn.motor1.com/images/mgl/R09nm/s1/bmw-m3-2021-im-test.webp" alt="BMW M3 Competition 2021">
+      <div class="carro-info">
+        <h3>BMW M3</h3>
+        <p>Modelo: Competition 2021</p>
+        <p>Cor: Azul</p>
+      </div>
     </div>
 
     <div class="carro">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGbSask9JSgj82GpZ6UVUdEh75MmU6E8Iqng&s/" alt="Audi R8 V10 2022">
-        <div>
-            <h2>Nome: Audi R8</h2>
-            <p>Modelo: V10 2022</p>
-            <p>Cor: Prata</p>
-        </div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGbSask9JSgj82GpZ6UVUdEh75MmU6E8Iqng&s" alt="Audi R8 V10 2022">
+      <div class="carro-info">
+        <h3>Audi R8</h3>
+        <p>Modelo: V10 2022</p>
+        <p>Cor: Prata</p>
+      </div>
     </div>
 
     <div class="carro">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgrIUhllAAuRpGTq5YTJtHXarFENnhqDAsQw&s/" alt="Pagani Zonda R 2010">
-        <div>
-            <h2>Nome: Pagani Zonda R</h2>
-            <p>Modelo: 2010</p>
-            <p>Cor: Preto</p>
-        </div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgrIUhllAAuRpGTq5YTJtHXarFENnhqDAsQw&s" alt="Pagani Zonda R 2010">
+      <div class="carro-info">
+        <h3>Pagani Zonda R</h3>
+        <p>Modelo: 2010</p>
+        <p>Cor: Preto</p>
+      </div>
     </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CarExpo. Todos os direitos reservados.</p>
+  </footer>
 
 </body>
 </html>
