@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarExpo - A Sua Exposição de Carros Esportivos</title>
+    <meta name="description" content="Explore os mais incríveis carros esportivos na CarExpo.">
+    <meta name="keywords" content="carros, esportivos, exposição, automóveis, velocidade, luxo">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cor-principal: #ffd700;
+            --cor-secundaria: #fff;
+            --cor-fundo: #111;
+            --cor-fundo-header-footer: #000;
+            --cor-texto-detalhe: #ccc;
+            --fonte-principal: 'Open Sans', sans-serif;
+            --fonte-destaque: 'Orbitron', sans-serif;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--fonte-principal);
+            background-color: var(--cor-fundo);
+            color: var(--cor-secundaria);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--cor-fundo-header-footer);
+            padding: 1.5rem 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--cor-principal);
+        }
+
+        header h1 {
+            font-family: var(--fonte-destaque);
+            font-size: 2em;
+            color: var(--cor-principal);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav li {
+            margin-left: 1.5rem;
+        }
+
+        nav a {
+            color: var(--cor-secundaria);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: var(--cor-principal);
+        }
+
+        .banner {
+            background: url('https://cdn.pixabay.com/photo/2016/11/22/20/10/car-1853304_1280.jpg') no-repeat center center/cover;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .banner-content {
+            background-color: rgba(0, 0, 0, 0.75);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .banner-content h2 {
+            color: var(--cor-principal);
+            font-size: 1.8em;
+            margin-bottom: 0.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2.5rem auto;
+            padding: 0 1rem;
+        }
+
+        .carros-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .carro {
+            background-color: #1c1c1c;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.15);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .carro:hover {
+            transform: scale(1.03);
+        }
+
+        .carro img {
+            display: block;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid var(--cor-principal);
+        }
+
+        .carro-info {
+            padding: 1.5rem;
+        }
+
+        .carro-info h3 {
+            color: var(--cor-principal);
+            margin-bottom: 0.75rem;
+            font-size: 1.2em;
+        }
+
+        .carro-info p {
+            color: var(--cor-texto-detalhe);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background-color: var(--cor-fundo-header-footer);
+            color: #777;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2.5rem;
+            font-size: 0.8rem;
+        }
+
+        /* Media Queries para Responsividade */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            nav ul {
+                padding: 0;
+            }
+
+            nav li {
+                margin-left: 1rem;
+            }
+
+            .banner {
+                height: 300px;
+            }
+
+            .banner-content h2 {
+                font-size: 1.5em;
+                padding: 1rem;
+            }
+
+            .container {
+                padding: 0 0.5rem;
+            }
+
+            .carros-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1rem;
+            }
+
+            .carro img {
+                height: 160px;
+            }
+
+            .carro-info {
+                padding: 1rem;
+            }
+
+            .carro-info h3 {
+                font-size: 1.1em;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header h1 {
+                margin-bottom: 0.5rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav li {
+                margin-left: 0;
+                margin-bottom: 0.5rem;
+            }
+
+            .banner {
+                height: 250px;
+            }
+
+            .banner-content h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>CarExpo</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Carros</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <div class="banner-content">
+            <h2>Bem-vindo à maior exposição de carros esportivos do Brasil!</h2>
+        </div>
+    </section>
+
+    <main class="container">
